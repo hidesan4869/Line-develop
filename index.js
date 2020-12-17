@@ -11,7 +11,7 @@ const config = {
 const client = new line.Client(config);
 
 app
-.post('/hook/', line.middleware(config), (req,res) => lineBot(req, res))
+.post('/hook', line.middleware(config), (req,res) => lineBot(req, res))
 .listen(PORT,() => console.log(`Listening on ${PORT}`));
 
 const lineBot = (req, res) => {
