@@ -1,5 +1,5 @@
 {
-  "name": "line-develop",
+  "name": "line-yoyaku",
   "version": "1.0.0",
   "description": "line-yoyaku",
   "engines": {
@@ -9,7 +9,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test.js"
   },
   "author": "hideya",
   "license": "ISC",
