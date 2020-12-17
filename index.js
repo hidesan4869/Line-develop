@@ -18,7 +18,7 @@ const lineBot = (req, res) => {
   res.status(200).end();
   const events = req.body.events;
   const promises = [];
-  for(let i=0; i<events.length;i++) {
+  for(let i = 0; i < events.length; i++) {
     const ev = events[i];
     switch(ev.type) {
       case 'follow':
@@ -30,12 +30,12 @@ const lineBot = (req, res) => {
     .all(promises)
     .then(console.log('all promises passed'))
     .catch(e => console.error(e.stack));
-}
 
-const greeting_follow = async (ev) => {
-  const profile = await client.getProfile(ev.source.userId);
-  return client.replyMessage(ev.replyToken, {
-    "type": "text",
-    "text": `${profile.displayName}さん、フォローありがとうございます\uDBC0\uDC04`
-  });
-}
+  }
+  const greeting_follow = async (ev) => {
+    const profile = await client.getProfile(ev.source.userId);
+    return client.replyMessage(ev.replyToken, {
+      "type": "text",
+      "text": `${profile.displayName}さん、フォローありがとうございます\uDBC0\uDC04`
+    });
+  }
